@@ -1,6 +1,9 @@
+// SIRVE PARA AUTOCOMPLETAR CODIGO Y PREVENIR ERRORES DE SINTAXIS EN LA CONFIGURACION
 import { defineConfig } from 'vite';
+// TRANSFORMA JSX A JAVASCRIPT Y GUARDA CAMBIOS EN UN COMPONENTE
 import react from '@vitejs/plugin-react';
 
+// EXPORTA EL OBJETO DE CONFUGIRACION PARA QUE SE LEA AL CORRER EL PROGRAMA
 export default defineConfig({
-  plugins: [react()]
+  plugins: [react()] // REGISTRA LA TUBERIA DE PROCESAMIENTO EN VITE
 });
