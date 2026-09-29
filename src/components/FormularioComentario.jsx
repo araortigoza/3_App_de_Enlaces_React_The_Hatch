@@ -1,12 +1,16 @@
 import { useState } from 'react';
 
+// SE DEFINE EL COMPONENTE CONTROLADO PARA CREAR COMENTARIOS
 function FormularioComentario({ onComentar }) {
+  // DECLARA UN ESTADO POR CADA CAMPO DEL FORMULARIO - INICIAN COMO VACIOS
   const [autor, setAutor] = useState('');
   const [text, setText] = useState('');
 
+
   const manejarSubmit = async (evento) => {
-    evento.preventDefault();
-    await onComentar({ autor, text });
+    evento.preventDefault(); // EVITA EL COMPORTAMIENTO POR DEFECTO DE LOS FORMULARIOS HTML QUE SERIA RECARGAR LA PAGINA Y ENVIAR PETICION POST
+    await onComentar({ autor, text }); // INVOCA EL CALLBACK ENVIADO POR DETALLE CON EL OBJETO ESTRUCTURADO
+    // RESETEA LOS ESTADOS A CADENAS VACIAS
     setAutor('');
     setText('');
   };
